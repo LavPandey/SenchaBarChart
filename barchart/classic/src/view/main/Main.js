@@ -8,7 +8,7 @@
 Ext.define('chart.view.main.Main', {
     extend: 'Ext.panel.Panel',
     xtype: 'app-main',
-
+    requires: ['Ext.plugin.Viewport', 'Ext.form.field.Checkbox', 'chart.view.main.BarChart', 'chart.view.main.MainModel'],
     viewModel: {
         type: 'mainmodel'
     },

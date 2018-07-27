@@ -1,5 +1,6 @@
 Ext.define('chart.view.main.BarChart', {
     extend: 'Ext.chart.CartesianChart',
+    requires: ['Ext.chart.CartesianChart', 'Ext.chart.axis.Numeric', 'Ext.chart.axis.Category', 'Ext.chart.series.Bar', 'Ext.chart.interactions.ItemHighlight'],
     xtype: 'bar-chart',
     width: '100%',
     height: 460,
@@ -37,7 +38,7 @@ Ext.define('chart.view.main.BarChart', {
                 degrees: -45
             },
         },
-        renderer: function(axis, label, layoutContext) {
+        renderer: function (axis, label, layoutContext) {
 
             return Ext.Date.format(new Date(label), 'F-d h:i A')
         }
@@ -53,7 +54,7 @@ Ext.define('chart.view.main.BarChart', {
         },
         tooltip: {
             trackMouse: true,
-            renderer: function(tooltip, record, item) {
+            renderer: function (tooltip, record, item) {
                 var fieldIndex = Ext.Array.indexOf(item.series.getYField(), item.field),
                     cpu = item.series.getTitle()[fieldIndex];
 
